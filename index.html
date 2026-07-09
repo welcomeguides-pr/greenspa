@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,28 +8,28 @@
 </head>
 <body>
 <x-dc>
-
+ 
 <template id="__bundler_thumbnail" data-bg-color="#0D6B66">
   <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <circle cx="50" cy="35" r="14" fill="#C7DF3A"></circle>
     <text x="50" y="72" text-anchor="middle" font-family="serif" font-size="14" fill="#FAF8F4">Green Spa</text>
   </svg>
 </template>
-
+ 
 <helmet>
-  <meta name="ext-resource-dependency" content="assets/service-facial.png">
-  <meta name="ext-resource-dependency" content="assets/service-maderoterapia.png">
-  <meta name="ext-resource-dependency" content="assets/service-laser.png">
-  <meta name="ext-resource-dependency" content="assets/service-masaje.png">
-  <meta name="ext-resource-dependency" content="assets/gal-dermaplaning.png">
-  <meta name="ext-resource-dependency" content="assets/gal-facial-pareja.png">
-  <meta name="ext-resource-dependency" content="assets/gal-laser-rosacea.png">
-  <meta name="ext-resource-dependency" content="assets/gal-microagujas.png">
-  <meta name="ext-resource-dependency" content="assets/gal-radiofrecuencia.png">
-  <meta name="ext-resource-dependency" content="assets/gal-picolaser.png">
+  <meta name="ext-resource-dependency" content="assets/service-facial.jpg">
+  <meta name="ext-resource-dependency" content="assets/service-maderoterapia.jpg">
+  <meta name="ext-resource-dependency" content="assets/service-laser.jpg">
+  <meta name="ext-resource-dependency" content="assets/service-masaje.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-dermaplaning.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-facial-pareja.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-laser-rosacea.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-microagujas.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-radiofrecuencia.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-picolaser.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Montserrat:wght@300;400;500;600&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0; scroll-behavior: smooth; overflow-x: hidden;
@@ -53,16 +54,16 @@
   </style>
   <script src="./image-slot.js"></script>
 </helmet>
-
+ 
 <div style="font-family: 'Montserrat', sans-serif; color: #16211F; background: #FAF8F4; -webkit-font-smoothing: antialiased;">
-
+ 
   <!-- NAV -->
   <div data-screen-label="Nav" style="position: sticky; top: 0; z-index: 50; background: rgba(250,248,244,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(13,107,102,0.12);">
     <div style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="#hero" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
         <img src="assets/logo-3d-transparent.png" alt="Green Spa by Luz" style="height: 78px; width: auto; display: block;">
       </a>
-
+ 
       <div style="display: {{ desktopNavDisplay }}; align-items: center; gap: 34px;">
         <a href="#hero" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Inicio</a>
         <a href="#servicios" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Servicios</a>
@@ -72,14 +73,14 @@
         <a href="#contacto" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Contacto</a>
         <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: #FAF8F4; background: #0D6B66; padding: 11px 22px; border-radius: 999px; text-decoration: none; white-space: nowrap; animation: gs-cta-pulse 2.6s ease-out infinite; transition: transform 0.25s ease, background 0.25s ease;" style-hover="background:#0A544F; transform:scale(1.05)">Reservar cita</a>
       </div>
-
+ 
       <button onClick="{{ toggleMenu }}" aria-label="Menú" style="display: {{ mobileToggleDisplay }}; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(13,107,102,0.25); background: transparent; cursor: pointer; flex-direction: column; gap: 4px;">
         <span style="width: 18px; height: 1.5px; background: #0D6B66; display: block;"></span>
         <span style="width: 18px; height: 1.5px; background: #0D6B66; display: block;"></span>
         <span style="width: 18px; height: 1.5px; background: #0D6B66; display: block;"></span>
       </button>
     </div>
-
+ 
     <div style="display: {{ mobileMenuDisplay }}; flex-direction: column; gap: 2px; padding: 8px 24px 20px; border-top: 1px solid rgba(13,107,102,0.1);">
       <a href="#hero" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Inicio</a>
       <a href="#servicios" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Servicios</a>
@@ -90,10 +91,10 @@
       <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="margin-top: 12px; text-align: center; font-size: 14px; font-weight: 600; color: #FAF8F4; background: #0D6B66; padding: 13px; border-radius: 999px; text-decoration: none;">Reservar cita</a>
     </div>
   </div>
-
+ 
   <!-- HERO -->
   <div id="hero" data-screen-label="Hero" style="position: relative; min-height: 640px; display: flex; align-items: center; overflow: hidden;">
-    <img ref="{{ heroImgRef }}" src="assets/hero-banner.png" alt="Green Spa by Luz" style="position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover; z-index: 0; will-change: transform;">
+    <img ref="{{ heroImgRef }}" src="assets/hero-banner.jpg" alt="Green Spa by Luz" style="position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover; z-index: 0; will-change: transform;">
     <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,26,24,0.78) 0%, rgba(15,26,24,0.5) 45%, rgba(15,26,24,0.15) 75%, rgba(15,26,24,0) 100%); z-index: 1;"></div>
     <div style="position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; padding: 64px 32px; width: 100%;">
       <div style="max-width: 560px;">
@@ -106,7 +107,7 @@
       </div>
     </div>
   </div>
-
+ 
   <!-- STAT BAR -->
   <div data-screen-label="Stat bar" style="position: relative; background: linear-gradient(120deg, #0D6B66 0%, #0B5B57 100%); overflow: hidden;">
     <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
@@ -141,7 +142,7 @@
     </div>
     </sc-if>
   </div>
-
+ 
   <!-- INTRODUCCION -->
   <div data-screen-label="Introducción" style="background-color: #ECE4D4; background-image: url('assets/noise-texture.svg'), radial-gradient(ellipse 60% 45% at 12% 15%, rgba(180,146,84,0.10), transparent 70%), radial-gradient(ellipse 55% 40% at 88% 30%, rgba(13,107,102,0.05), transparent 70%), radial-gradient(ellipse 70% 55% at 30% 90%, rgba(180,146,84,0.08), transparent 70%), radial-gradient(ellipse 65% 50% at 95% 95%, rgba(200,178,140,0.10), transparent 70%); border-top: 1px solid rgba(180,146,84,0.3); border-bottom: 1px solid rgba(180,146,84,0.3);">
     <div style="max-width: 1000px; margin: 0 auto; padding: {{ introPadding }}; display: grid; grid-template-columns: {{ introGridCols }}; gap: {{ introGap }}; align-items: center;">
@@ -157,17 +158,17 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
       </div>
     </div>
   </div>
-
+ 
   <!-- SERVICIOS -->
   
-
+ 
   <!-- ESTETICISTAS -->
   <div id="servicios" data-screen-label="Servicios" style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 60px; height: {{ servicesSectionHeight }}">
     <div style="text-align: center; max-width: 620px; margin: 0 auto 48px;">
       <div style="font-family: Cormorant Garamond; font-size: 42px; color: #0D6B66; line-height: 1.1; font-weight: 800"><br>Elige tu Experiencia</div>
       
     </div>
-
+ 
     <div style="display: grid; grid-template-columns: {{ servicesGridCols }}; gap: 18px; margin: 0 auto 40px; max-width: 1160px;">
       <sc-for list="{{ treatmentCards }}" as="t" hint-placeholder-count="4">
         <a ref="{{ t.setRef }}" href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="{{ t.wrapStyle }}" style-hover="box-shadow:0 26px 46px -18px rgba(13,38,35,0.4)">
@@ -180,19 +181,19 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
         </a>
       </sc-for>
     </div>
-
+ 
     <div style="text-align: center; margin-bottom: 64px;">
       <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="display: inline-block; font-size: clamp(13px, 3.6vw, 15px); font-weight: 600; color: #FAF8F4; background: #0D6B66; padding: 16px 28px; border-radius: 999px; text-decoration: none; white-space: nowrap;" style-hover="background:#0A544F">Ver todos los servicios aquí</a>
     </div>
-
+ 
   </div><div id="esteticistas" data-screen-label="Esteticistas" style="background-color: #ECE4D4; background-image: url('assets/noise-texture.svg'), radial-gradient(ellipse 60% 45% at 12% 15%, rgba(180,146,84,0.10), transparent 70%), radial-gradient(ellipse 55% 40% at 88% 30%, rgba(13,107,102,0.05), transparent 70%), radial-gradient(ellipse 70% 55% at 30% 90%, rgba(180,146,84,0.08), transparent 70%), radial-gradient(ellipse 65% 50% at 95% 95%, rgba(200,178,140,0.10), transparent 70%); padding: 70px 32px 90px; border-width: 1px 0; border-style: solid; border-color: rgba(180,146,84,0.3); height: {{ esteticistasSectionHeight }}">
     <div style="max-width: 1160px; margin: 0 auto;">
-
+ 
       <div style="text-align: center; max-width: 620px; margin: 0 auto 60px; padding: 0 20px;">
         <div style="font-family: Cormorant Garamond; font-size: clamp(30px, 8vw, 42px); color: #0D6B66; line-height: 1.1; font-weight: 800">El Equipo Green Spa</div>
         
       </div>
-
+ 
       <!-- Foco rotativo automático -->
       <div style="position: relative;">
         <div style="max-width: 720px; margin: 0 auto; text-align: center;">
@@ -218,11 +219,11 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
       </div>
     </div>
   </div>
-
+ 
   <!-- TESTIMONIOS -->
   <div id="testimonios" data-screen-label="Testimonios" style="max-width: 1240px; margin: 0 auto; padding: 70px 32px 90px; display: block">
     <div style="display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start;">
-
+ 
       <div style="flex: 1 1 340px; min-width: 280px;">
         
         <div ref="{{ setHeadingRef }}" style="font-family: Cormorant Garamond; font-size: 42px; color: #0D6B66; margin-bottom: 10px; font-weight: 800; line-height: 1.15;">{{ typedHeading }}<span style="{{ cursorStyle }}">|</span></div>
@@ -230,14 +231,14 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
         <p style="font-size: 16px; line-height: 1.8; color: #4A5551; max-width: 420px; margin: 0 0 32px;">La mejor recomendación viene de nuestras clientas. Estas son algunas de las experiencias que han vivido en Green Spa.</p>
         <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="display: inline-block; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: #FAF8F4; background: #0D6B66; padding: 15px 34px; border-radius: 999px; text-decoration: none;" style-hover="background:#0A544F">Reserva aquí</a>
       </div>
-
+ 
       <div style="flex: 1 1 420px; min-width: 300px; position: relative;">
         <div style="background: #fff; border: 1px solid rgba(13,107,102,0.12); border-radius: 20px; padding: 44px 40px; min-height: 150px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 24px 48px -28px rgba(13,38,35,0.18); position: static">
           <span style="color: #C7DF3A; font-size: 16px; letter-spacing: 2px; display: block; margin-bottom: 18px;">★★★★★</span>
           <p style="font-size: 17px; line-height: 1.75; color: #354039; margin: 0 0 22px; min-height: 90px;">"{{ activeTestimonial.text }}"</p>
           <div style="font-size: 14px; font-weight: 600; color: #16211F;">{{ activeTestimonial.name }}</div>
         </div>
-
+ 
         <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 26px; flex-wrap: nowrap">
           
         <div style="display: flex; gap: 10px;">
@@ -249,10 +250,10 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
             </button>
           </div></div>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- GALERIA -->
   <div id="galeria" data-screen-label="Galería" style="background-color: #ECE4D4; background-image: url('assets/noise-texture.svg'), radial-gradient(ellipse 60% 45% at 12% 15%, rgba(180,146,84,0.10), transparent 70%), radial-gradient(ellipse 55% 40% at 88% 30%, rgba(13,107,102,0.05), transparent 70%), radial-gradient(ellipse 70% 55% at 30% 90%, rgba(180,146,84,0.08), transparent 70%), radial-gradient(ellipse 65% 50% at 95% 95%, rgba(200,178,140,0.10), transparent 70%); border-top: 1px solid rgba(180,146,84,0.3); border-bottom: 1px solid rgba(180,146,84,0.3); padding: 70px 32px 90px; height: {{ galeriaSectionHeight }}">
     <div style="max-width: 1160px; margin: 0 auto;">
@@ -260,19 +261,19 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
         <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #0D6B66; margin-bottom: 10px;">Galería</div>
         <div style="font-family: Cormorant Garamond; font-size: 42px; color: #0D6B66; font-weight: 800">Así se Vive Green Spa</div>
       </div>
-
+ 
       <!-- Galería orbital 3D -->
       <div style="position: relative; text-align: center;">
-
+ 
         <!-- depth: blurred botanical leaf shadows -->
         <div style="position: absolute; left: -60px; top: 10%; width: 260px; height: 380px; background: #0D6B66; opacity: 0.06; border-radius: 50% 50% 45% 55% / 55% 60% 40% 45%; filter: blur(38px); transform: rotate(-18deg); pointer-events: none; z-index: 0;"></div>
         <div style="position: absolute; right: -70px; bottom: 4%; width: 300px; height: 420px; background: #0D6B66; opacity: 0.05; border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%; filter: blur(44px); transform: rotate(24deg); pointer-events: none; z-index: 0;"></div>
-
+ 
         <!-- depth: subtle organic wave -->
         <svg viewBox="0 0 1160 200" preserveAspectRatio="none" style="position: absolute; left: 0; right: 0; bottom: -20px; width: 100%; height: 140px; opacity: 0.12; pointer-events: none; z-index: 0;">
           <path d="M0,120 C 200,60 380,180 600,110 S 980,40 1160,100 L1160,200 L0,200 Z" fill="#0D6B6600"></path>
         </svg>
-
+ 
         <div onMouseEnter="{{ orbitEnter }}" onMouseLeave="{{ orbitLeave }}" style="position: relative; height: {{ orbitStageH }}; max-width: 1080px; margin: 8px auto 0; perspective: {{ orbitPerspective }}; perspective-origin: 50% 42%; z-index: 1;">
           <sc-for list="{{ orbitItems }}" as="o" hint-placeholder-count="6">
             <div ref="{{ o.setRef }}" onClick="{{ o.onClick }}" role="img" aria-label="{{ o.label }}" style="{{ o.wrapStyle }}">
@@ -284,7 +285,7 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
             </div>
           </sc-for>
         </div>
-
+ 
         <div style="min-height: 40px; margin-top: 22px; position: relative; z-index: 1;">
           <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #0D6B66; line-height: 1.1;">{{ galCLabel }}</div>
         </div>
@@ -295,14 +296,14 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
         </div>
         
       </div>
-
+ 
       
     </div>
   </div>
-
+ 
   <!-- CTA RESERVA -->
   <div data-screen-label="CTA Reserva" style="position: relative; padding: 60px 32px; text-align: center; overflow: hidden;">
-    <img src="assets/cta-maderoterapia.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.75);">
+    <img src="assets/cta-maderoterapia.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.75);">
     <div style="position: relative; z-index: 2; max-width: 560px; margin: 0 auto; backdrop-filter: blur(6px); padding: 40px 40px; box-shadow: 0px 30px 70px 0px #0000001B; overflow: visible; background-color: #FAF8F49C">
       <div style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 5vw, 40px); font-weight: 600; color: #0D6B66; line-height: 1.15;">Lista para tu momento</div>
       <div style="font-family: 'Great Vibes', cursive; font-size: clamp(30px, 5.5vw, 44px); color: #0D6B66; margin-top: 2px;">de bienestar</div>
@@ -312,17 +313,17 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
       <p style="font-size: 14.5px; color: #4A5551; margin: 18px 0 0;">También puedes llamarnos al <a href="tel:+17879892555" style="color: #0D6B66; font-weight: 600; text-decoration: none;">(787) 989-2555</a></p>
     </div>
   </div>
-
+ 
   <!-- UBICACION -->
   <div data-screen-label="Ubicación" style="background: #FAF8F4; padding: 70px 32px 90px;">
     <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: stretch;">
-
+ 
       
-
+ 
       <div style="flex: 1 1 420px; min-width: 300px;">
         <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 3.8vw, 2.8rem); margin: 0 0 18px; color: #16211F;">Estamos en Carolina</h2>
         <p style="font-size: 16px; line-height: 1.8; color: #4A5551; max-width: 460px; margin: 0 0 40px;">Ubicadas en Villa Fontana, Carolina. Fácil acceso, ambiente tranquilo. Llámanos o reserva en línea.</p>
-
+ 
         <div style="display: flex; align-items: flex-start; gap: 18px; margin-bottom: 30px;">
           <div style="width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 6px 16px rgba(13,38,35,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.5 2.1L7.9 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.5c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"></path></svg>
@@ -332,7 +333,7 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
             <a href="tel:+17879892555" style="font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #16211F; text-decoration: none;" style-hover="color:#0D6B66">(787) 989-2555</a>
           </div>
         </div>
-
+ 
         <div style="display: flex; align-items: flex-start; gap: 18px; margin-bottom: 30px;">
           <div style="width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 6px 16px rgba(13,38,35,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -342,7 +343,7 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
             <a href="https://maps.app.goo.gl/GXAbjP3DmHeTmJBR6" target="_blank" rel="noopener" style="font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.5; color: #16211F; text-decoration: none;" style-hover="color:#0D6B66">Villa Fontana via Joséfina 4ss10<br>Carolina, Puerto Rico 00983</a>
           </div>
         </div>
-
+ 
         <div style="display: flex; align-items: flex-start; gap: 18px;">
           <div style="width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 6px 16px rgba(13,38,35,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
@@ -365,23 +366,23 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
       </div>
     </div>
   </div>
-
+ 
   <!-- FOOTER -->
   <div id="contacto" data-screen-label="Footer" style="background: #0D6B66; padding: 70px 32px 30px;">
     <div style="max-width: 1080px; margin: 0 auto;">
-
+ 
       <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; padding-bottom: 40px;">
-
+ 
         <div style="flex: 1 1 260px; text-align: center;">
           <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #C7DF3A; margin-bottom: 6px;">Green Spa by Luz</div>
           <div style="font-family: 'Great Vibes', cursive; font-size: 30px; color: #FAF8F4; line-height: 1;">Hair Salon &amp; Boutique</div>
         </div>
-
+ 
         <div style="flex: 1 1 200px; text-align: center;">
           <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C7DF3A; margin-bottom: 8px;">Teléfono</div>
           <a href="tel:+17879892555" style="font-family: 'Great Vibes', cursive; font-size: 28px; color: #FAF8F4; text-decoration: none; line-height: 1;" style-hover="color:#C7DF3A">(787) 989-2555</a>
         </div>
-
+ 
         <div style="flex: 1 1 160px; display: flex; justify-content: center; gap: 16px;">
           <a href="https://www.instagram.com/greenspabyluz/" target="_blank" rel="noopener" aria-label="Instagram" style="width: 46px; height: 46px; border-radius: 50%; background: #C7DF3A; border: 2px solid #C7DF3A; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 8px 18px rgba(199,223,58,0.3);" style-hover="background:#b8ce2e;border-color:#b8ce2e">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
@@ -391,27 +392,27 @@ Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depil
           </a>
         </div>
       </div>
-
+ 
       <div style="padding-top: 24px; border-top: 1px solid rgba(250,248,244,0.15); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;">
         <p style="font-size: 12.5px; color: rgba(250,248,244,0.6); margin: 0;">© 2026 Green Spa by Luz. Todos los derechos reservados.</p>
         <p style="font-size: 12.5px; color: rgba(250,248,244,0.6); margin: 0;">Diseñado por <a href="https://www.biancomediasolutions.com/" target="_blank" rel="noopener" style="color: #C7DF3A; font-weight: 600; text-decoration: none;" style-hover="text-decoration:underline">Bianco Media Solutions</a></p>
       </div>
     </div>
   </div>
-
+ 
   <a href="https://wa.me/7879892555" target="_blank" rel="noopener" aria-label="WhatsApp" style="position: fixed; bottom: 24px; right: 24px; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.25); z-index: 60; text-decoration: none;">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M20.5 11.9c0 4.7-3.8 8.5-8.5 8.5-1.5 0-2.9-.4-4.1-1.1L3.5 20.5l1.2-4.2a8.4 8.4 0 0 1-1.2-4.4c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5z" fill="none" stroke="#fff" stroke-width="1.6"></path><path d="M8.5 8.7c.1-.5.5-.6.8-.6h.6c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.5 1.5.2.1.4.1.5-.1.2-.2.6-.7.8-1 .2-.2.3-.2.5-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.8-.2 1.5-.3.7-1.5 1.4-2.1 1.4-.5 0-1.2.1-3.5-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 .9-2.3z"></path></svg>
   </a>
-
+ 
 </div>
-
+ 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
-
+ 
 class Component extends DCLogic {
   _orbitRefs = [];
   _treatmentRefs = [];
-
+ 
   constructor(props) {
     super(props);
     this.state = { menuOpen: false, isMobile: false, typedChars: 0, cursorOn: true, testimonialIndex: 0, treatmentsRevealed: [], statIdx: 0 };
@@ -422,10 +423,10 @@ class Component extends DCLogic {
       { label: 'Horario', text: 'Mar–Sáb, 9 AM – 6 PM · Cerrado dom. y lun.' }
     ];
     this.treatments = [
-      { src: 'assets/service-facial.png', label: 'Tratamientos faciales' },
-      { src: 'assets/service-maderoterapia.png', label: 'Maderoterapia' },
-      { src: 'assets/service-laser.png', label: 'Depilación láser' },
-      { src: 'assets/service-masaje.png', label: 'Masajes relajantes' }
+      { src: 'assets/service-facial.jpg', label: 'Tratamientos faciales' },
+      { src: 'assets/service-maderoterapia.jpg', label: 'Maderoterapia' },
+      { src: 'assets/service-laser.jpg', label: 'Depilación láser' },
+      { src: 'assets/service-masaje.jpg', label: 'Masajes relajantes' }
     ];
     this.fullHeading = 'Más que un tratamiento, una experiencia';
     this.testimonialsData = [
@@ -437,18 +438,18 @@ class Component extends DCLogic {
       { text: 'Un lugar acogedor y profesional. Recomiendo el facial hidratante, mi piel quedó increíble.', name: 'Yaritza Colón' },
     ];
   }
-
+ 
   goToTestimonial = (i) => { this.setState({ testimonialIndex: i }); this.restartAutoplay(); };
   prevTestimonial = () => { this.setState(s => ({ testimonialIndex: (s.testimonialIndex - 1 + this.testimonialsData.length) % this.testimonialsData.length })); this.restartAutoplay(); };
   nextTestimonial = () => { this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonialsData.length })); this.restartAutoplay(); };
-
+ 
   restartAutoplay = () => {
     if (this._testimonialAutoplay) clearInterval(this._testimonialAutoplay);
     this._testimonialAutoplay = setInterval(() => {
       this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonialsData.length }));
     }, 5000);
   };
-
+ 
   componentDidMount() {
     this.mq = window.matchMedia('(max-width: 860px)');
     this.setState({ isMobile: this.mq.matches });
@@ -459,7 +460,7 @@ class Component extends DCLogic {
     window.addEventListener('resize', this._resizeCheck, { passive: true });
     requestAnimationFrame(() => requestAnimationFrame(this._resizeCheck));
     setTimeout(this._resizeCheck, 300);
-
+ 
     this._onScroll = () => {
       if (this.heroImgEl) {
         const offset = window.scrollY * 0.35;
@@ -476,7 +477,7 @@ class Component extends DCLogic {
     this._onChange = (e) => this.setState({ isMobile: e.matches, menuOpen: e.matches ? this.state.menuOpen : false });
     if (this.mq.addEventListener) this.mq.addEventListener('change', this._onChange);
     else this.mq.addListener(this._onChange);
-
+ 
     this._treatmentObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -493,12 +494,12 @@ class Component extends DCLogic {
       });
     }, { threshold: 0.25 });
     this._treatmentRefs.forEach((el) => { if (el) this._treatmentObserver.observe(el); });
-
+ 
     this._statInterval = setInterval(() => {
       this.setState((s) => ({ statIdx: (s.statIdx + 1) % this.statsData.length }));
     }, 3200);
   }
-
+ 
   componentWillUnmount() {
     if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
     if (this._resizeCheck) window.removeEventListener('resize', this._resizeCheck);
@@ -514,7 +515,7 @@ class Component extends DCLogic {
     if (this._testimonialAutoplay) clearInterval(this._testimonialAutoplay);
     if (this._statInterval) clearInterval(this._statInterval);
   }
-
+ 
   setHeadingRef = (el) => {
     if (!el || this._headingSetup) return;
     this._headingSetup = true;
@@ -547,44 +548,44 @@ class Component extends DCLogic {
     this._cursorInterval = setInterval(() => this.setState(s => ({ cursorOn: !s.cursorOn })), 500);
     this.restartAutoplay();
   };
-
+ 
   teamMembers = [
     { name: 'Luz G. Rosado Díaz', role: 'Fundadora & Directora', bio: 'Con años de experiencia en belleza y bienestar, Luz creó Green Spa con una sola misión: que cada clienta salga sintiéndose la mejor versión de sí misma.' },
     { name: 'Neyshaliz de Jesús Rosado', role: 'Esteticista', bio: 'Experta en depilación IPL y tratamientos corporales. Neyshaliz trabaja con precisión y dedicación para brindarte resultados duraderos.' },
     { name: 'Sol Ariana Carmona', role: 'Esteticista', bio: 'Especialista en faciales y tratamientos de piel. Sol combina técnica y cuidado para garantizar que tu piel resplandezca.' }
   ];
-
+ 
   galleryItems = [
-    { src: 'assets/gal-dermaplaning.png', label: 'Dermaplaning' },
-    { src: 'assets/gal-facial-pareja.png', label: 'Facial en Pareja' },
-    { src: 'assets/gal-laser-rosacea.png', label: 'Láser para Rosácea' },
-    { src: 'assets/gal-microagujas.png', label: 'Microagujas' },
-    { src: 'assets/gal-radiofrecuencia.png', label: 'Radiofrecuencia' },
-    { src: 'assets/gal-picolaser.png', label: 'PicoLáser' }
+    { src: 'assets/gal-dermaplaning.jpg', label: 'Dermaplaning' },
+    { src: 'assets/gal-facial-pareja.jpg', label: 'Facial en Pareja' },
+    { src: 'assets/gal-laser-rosacea.jpg', label: 'Láser para Rosácea' },
+    { src: 'assets/gal-microagujas.jpg', label: 'Microagujas' },
+    { src: 'assets/gal-radiofrecuencia.jpg', label: 'Radiofrecuencia' },
+    { src: 'assets/gal-picolaser.jpg', label: 'PicoLáser' }
   ];
-
+ 
   normalizeAngle = (a) => {
     while (a > Math.PI) a -= 2 * Math.PI;
     while (a < -Math.PI) a += 2 * Math.PI;
     return a;
   };
-
+ 
   goGal = (i) => {
     const n = this.galleryItems.length;
     const baseAngle = ((2 * Math.PI) / n) * i;
     this._snapTargetAngle = -baseAngle;
     this._snapping = true;
   };
-
+ 
   orbitEnter = () => { this._paused = true; };
   orbitLeave = () => { this._paused = false; };
-
+ 
   tickOrbit = (t) => {
     if (this._lastOrbitT == null) this._lastOrbitT = t;
     const dt = Math.min(t - this._lastOrbitT, 48);
     this._lastOrbitT = t;
     this._floatTime += dt;
-
+ 
     if (this._snapping) {
       const diff = this.normalizeAngle(this._snapTargetAngle - this._orbitAngle);
       this._orbitAngle += diff * 0.07;
@@ -595,12 +596,12 @@ class Component extends DCLogic {
     } else if (!this._paused) {
       this._orbitAngle += dt * this.orbitSpeed;
     }
-
+ 
     const n = this.galleryItems.length;
     const isMobile = this.state.isMobile;
     const radius = isMobile ? 160 : 400;
     let bestIdx = 0, bestCos = -Infinity;
-
+ 
     for (let i = 0; i < n; i++) {
       const el = this._orbitRefs[i];
       const baseAngle = ((2 * Math.PI) / n) * i;
@@ -622,11 +623,11 @@ class Component extends DCLogic {
       el.style.zIndex = zIndex;
       el.style.filter = depth < 0.55 ? 'blur(' + ((0.55 - depth) * 2.6).toFixed(1) + 'px)' : 'none';
     }
-
+ 
     if (bestIdx !== (this.state.galIdx ?? 0)) this.setState({ galIdx: bestIdx });
     this._orbitRAF = requestAnimationFrame(this.tickOrbit);
   };
-
+ 
   goTeamC = (i, manual) => {
     if (manual && this._teamCInterval) {
       clearInterval(this._teamCInterval);
@@ -635,7 +636,7 @@ class Component extends DCLogic {
     this.setState({ teamCFade: true });
     setTimeout(() => this.setState({ teamCIdx: i, teamCFade: false }), 350);
   };
-
+ 
   setRevealRef = (el) => {
     if (!el || el._revealSetup) return;
     el._revealSetup = true;
@@ -648,7 +649,7 @@ class Component extends DCLogic {
     }, { threshold: 0.25 });
     obs.observe(el);
   };
-
+ 
   renderVals() {
     const isMobile = this.state.isMobile;
     const menuOpen = this.state.menuOpen;
@@ -781,7 +782,7 @@ class Component extends DCLogic {
     };
   }
 }
-
+ 
 </script>
 </body>
 </html>
