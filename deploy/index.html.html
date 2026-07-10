@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<template id="__bundler_thumbnail" data-bg-color="#0D6B66">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="35" r="14" fill="#C7DF3A"></circle>
+    <text x="50" y="72" text-anchor="middle" font-family="serif" font-size="14" fill="#FAF8F4">Green Spa</text>
+  </svg>
+</template>
+
+<helmet>
+  <meta name="ext-resource-dependency" content="assets/service-facial.jpg">
+  <meta name="ext-resource-dependency" content="assets/service-maderoterapia.jpg">
+  <meta name="ext-resource-dependency" content="assets/service-laser.jpg">
+  <meta name="ext-resource-dependency" content="assets/service-masaje.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-dermaplaning.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-facial-pareja.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-laser-rosacea.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-microagujas.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-radiofrecuencia.jpg">
+  <meta name="ext-resource-dependency" content="assets/gal-picolaser.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Montserrat:wght@300;400;500;600&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; scroll-behavior: smooth; overflow-x: hidden;
+      background-color: #FAF7F0;
+      background-image:
+        linear-gradient(112deg, transparent 49.88%, rgba(201,168,102,0.10) 50%, transparent 50.12%),
+        linear-gradient(66deg, transparent 49.91%, rgba(201,168,102,0.07) 50%, transparent 50.09%),
+        linear-gradient(78deg, transparent 49.82%, rgba(200,183,152,0.13) 50%, transparent 50.18%),
+        linear-gradient(104deg, transparent 49.85%, rgba(206,190,161,0.10) 50%, transparent 50.15%),
+        radial-gradient(ellipse 80% 50% at 15% 18%, rgba(216,201,175,0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 85% 8%, rgba(221,207,183,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 45% at 72% 62%, rgba(212,198,172,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 35% at 22% 88%, rgba(218,204,179,0.14) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+    body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; background: radial-gradient(ellipse 120% 90% at 50% 38%, transparent 58%, rgba(107,86,53,0.075) 100%); }
+    @keyframes gs-kenburns { 0% { transform: scale(1) translate(0, 0); } 100% { transform: scale(1.08) translate(1.2%, -1.2%); } }
+    @keyframes gs-stat-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes gs-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes gs-orbit-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+    @keyframes gs-cta-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(13,107,102,0.35); } 50% { box-shadow: 0 0 0 12px rgba(13,107,102,0); } }
+  </style>
+  <script src="./image-slot.js"></script>
+</helmet>
+
+<div style="font-family: 'Montserrat', sans-serif; color: #16211F; background: #FAF8F4; -webkit-font-smoothing: antialiased;">
+
+  <!-- NAV -->
+  <div data-screen-label="Nav" style="position: sticky; top: 0; z-index: 50; background: rgba(250,248,244,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(13,107,102,0.12);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="#hero" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="assets/logo-3d-transparent.png" alt="Green Spa by Luz" style="height: 78px; width: auto; display: block;">
+      </a>
+
+      <div style="display: {{ desktopNavDisplay }}; align-items: center; gap: 34px;">
+        <a href="#hero" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Inicio</a>
+        <a href="#servicios" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Servicios</a>
+        <a href="#esteticistas" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Esteticistas</a>
+        <a href="#testimonios" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Testimonios</a>
+        <a href="#galeria" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Galería</a>
+        <a href="#contacto" style="font-size: 14px; letter-spacing: 0.02em; color: #16211F; text-decoration: none; font-weight: 500;" style-hover="color:#0D6B66">Contacto</a>
+        <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: #FAF8F4; background: #0D6B66; padding: 11px 22px; border-radius: 999px; text-decoration: none; white-space: nowrap; animation: gs-cta-pulse 2.6s ease-out infinite; transition: transform 0.25s ease, background 0.25s ease;" style-hover="background:#0A544F; transform:scale(1.05)">Reservar cita</a>
+      </div>
+
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" style="display: {{ mobileToggleDisplay }}; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(13,107,102,0.25); background: transparent; cursor: pointer; flex-direction: column; gap: 4px;">
+        <span style="width: 18px; height: 1.5px; background: #0D6B66; display: block;"></span>
+        <span style="width: 18px; height: 1.5px; background: #0D6B66; display: block;"></span>
+        <span style="width: 18px; height: 1.5px; background: #0D6B66; display: block;"></span>
+      </button>
+    </div>
+
+    <div style="display: {{ mobileMenuDisplay }}; flex-direction: column; gap: 2px; padding: 8px 24px 20px; border-top: 1px solid rgba(13,107,102,0.1);">
+      <a href="#hero" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Inicio</a>
+      <a href="#servicios" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Servicios</a>
+      <a href="#esteticistas" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Esteticistas</a>
+      <a href="#testimonios" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Testimonios</a>
+      <a href="#galeria" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Galería</a>
+      <a href="#contacto" onClick="{{ closeMenu }}" style="padding: 12px 8px; font-size: 15px; color: #16211F; text-decoration: none; border-bottom: 1px solid rgba(13,107,102,0.08);">Contacto</a>
+      <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="margin-top: 12px; text-align: center; font-size: 14px; font-weight: 600; color: #FAF8F4; background: #0D6B66; padding: 13px; border-radius: 999px; text-decoration: none;">Reservar cita</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div id="hero" data-screen-label="Hero" style="position: relative; min-height: 640px; display: flex; align-items: center; overflow: hidden;">
+    <img ref="{{ heroImgRef }}" src="assets/hero-banner.png" alt="Green Spa by Luz" style="position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover; z-index: 0; will-change: transform;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,26,24,0.78) 0%, rgba(15,26,24,0.5) 45%, rgba(15,26,24,0.15) 75%, rgba(15,26,24,0) 100%); z-index: 1;"></div>
+    <div style="position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; padding: 64px 32px; width: 100%;">
+      <div style="max-width: 560px;">
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 3.7rem); line-height: 1.08; margin: 0 0 22px; color: #FAF8F4;">Tu piel, tu paz,<br>tu mejor versión.</h1>
+        <p style="font-size: 17px; line-height: 1.7; color: rgba(250,248,244,0.88); max-width: 460px; margin: 0 0 34px;">Facial, corporal, láser y masaje en un ambiente pensado para que salgas sintiéndote cuidada de principio a fin.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+          <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="font-size: 15px; font-weight: 600; color: #FAF8F4; background: #0D6B66; padding: 16px 30px; border-radius: 999px; text-decoration: none;" style-hover="background:#0A544F">Reservar cita</a>
+          <a href="#servicios" style="font-size: 15px; font-weight: 600; color: #FAF8F4; background: transparent; padding: 16px 30px; border-radius: 999px; text-decoration: none; border: 1px solid rgba(250,248,244,0.55);" style-hover="border-color:#C7DF3A;color:#C7DF3A">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAT BAR -->
+  <div data-screen-label="Stat bar" style="position: relative; background: linear-gradient(120deg, #0D6B66 0%, #0B5B57 100%); overflow: hidden;">
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 24px 32px; text-align: center; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div key="{{ statIdx }}" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; font-weight: 500; color: #C7DF3A; margin-bottom: 6px; animation: gs-stat-fade 0.6s ease;">{{ statLabel }}</div>
+        <div style="font-size: 13.5px; line-height: 1.45; color: rgba(250,248,244,0.72); max-width: 280px;">{{ statText }}</div>
+        <div style="display: flex; gap: 8px; justify-content: center; margin-top: 12px;">
+          <sc-for list="{{ statDots }}" as="d" hint-placeholder-count="4">
+            <div onClick="{{ d.onClick }}" style="{{ d.style }}"></div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}">
+    <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: {{ statBarPadding }}; display: flex; flex-direction: {{ statBarFlexDir }}; justify-content: space-between; align-items: flex-start; gap: {{ statBarGap }}; height: 50px">
+      <div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 500; color: #C7DF3A; margin-bottom: 8px;">Desde 2011</div>
+        <div style="font-size: 14px; line-height: 1.5; color: rgba(250,248,244,0.72);">Más de una década cuidando tu bienestar</div>
+      </div>
+      <div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 500; color: #C7DF3A; margin-bottom: 8px;">5.0 ★ en 25 reseñas</div>
+        <div style="font-size: 14px; line-height: 1.5; color: rgba(250,248,244,0.72);">Calificación perfecta de nuestras clientas</div>
+      </div>
+      <div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 500; color: #C7DF3A; margin-bottom: 8px;">Equipo Certificado</div>
+        <div style="font-size: 14px; line-height: 1.5; color: rgba(250,248,244,0.72);">Esteticistas profesionales y experimentadas</div>
+      </div>
+      <div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 500; color: #C7DF3A; margin-bottom: 8px;">Horario</div>
+        <div style="font-size: 14px; line-height: 1.5; color: rgba(250,248,244,0.72); width: 218px">Mar–Sáb, 9 AM – 6 PM · <br>Cerrado dom. y lun.</div>
+      </div>
+    </div>
+    </sc-if>
+  </div>
+
+  <!-- INTRODUCCION -->
+  <div data-screen-label="Introducción" style="background-color: #ECE4D4; background-image: url('assets/noise-texture.svg'), radial-gradient(ellipse 60% 45% at 12% 15%, rgba(180,146,84,0.10), transparent 70%), radial-gradient(ellipse 55% 40% at 88% 30%, rgba(13,107,102,0.05), transparent 70%), radial-gradient(ellipse 70% 55% at 30% 90%, rgba(180,146,84,0.08), transparent 70%), radial-gradient(ellipse 65% 50% at 95% 95%, rgba(200,178,140,0.10), transparent 70%); border-top: 1px solid rgba(180,146,84,0.3); border-bottom: 1px solid rgba(180,146,84,0.3);">
+    <div style="max-width: 1000px; margin: 0 auto; padding: {{ introPadding }}; display: grid; grid-template-columns: {{ introGridCols }}; gap: {{ introGap }}; align-items: center;">
+      <div ref="{{ setRevealRef }}" style="opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; text-align: {{ introTextAlign }};">
+        <div style="font-family: Cormorant Garamond; font-size: 42px; color: #0D6B66; margin-bottom: 20px; font-weight: 800; line-height: 1.1;">Conoce Green Spa by Luz</div>
+        <p style="font-size: 17px; line-height: 1.8; color: #4A5551; margin: 0;"><strong>Más de una década cuidando tu belleza y bienestar.</strong><br>
+Desde 2011, Green Spa by Luz ofrece tratamientos faciales, <br>corporales, depilación láser y masajes en un ambiente donde<br>la calidez, el profesionalismo y la atención personalizada <br>hacen que cada visita sea una experiencia única.</p>
+        <div style="margin-top: 24px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #0D6B66;">— Luz, fundadora</div>
+      </div>
+      <div ref="{{ setRevealRef }}" style="position: relative; padding: {{ introImgPadding }}; opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s; width: {{ introImgWidth }}; max-width: {{ introImgMaxWidth }}; margin: {{ introImgMargin }};">
+        <div style="position: absolute; top: 16px; left: 16px; right: 0; bottom: 0; border: 2px solid #0D6B66; border-radius: 12px;"></div>
+        <img src="assets/luz.jpeg" alt="Luz, fundadora de Green Spa" style="position: relative; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; border-radius: 12px; display: block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  
+
+  <!-- ESTETICISTAS -->
+  <div id="servicios" data-screen-label="Servicios" style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 60px; height: {{ servicesSectionHeight }}">
+    <div style="text-align: center; max-width: 620px; margin: 0 auto 48px;">
+      <div style="font-family: Cormorant Garamond; font-size: 42px; color: #0D6B66; line-height: 1.1; font-weight: 800"><br>Elige tu Experiencia</div>
+      
+    </div>
+
+    <div style="display: grid; grid-template-columns: {{ servicesGridCols }}; gap: 18px; margin: 0 auto 40px; max-width: 1160px;">
+      <sc-for list="{{ treatmentCards }}" as="t" hint-placeholder-count="4">
+        <a ref="{{ t.setRef }}" href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="{{ t.wrapStyle }}" style-hover="box-shadow:0 26px 46px -18px rgba(13,38,35,0.4)">
+          <img src="{{ t.src }}" alt="{{ t.label }}" style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); transition: transform 1.1s cubic-bezier(.22,1,.36,1), filter 0.6s ease; filter: saturate(1);" style-hover="transform:scale(1.16); filter:saturate(1.12)">
+          <span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,38,35,0.55) 0%, rgba(13,38,35,0.0) 45%); opacity: 0; transition: opacity 0.5s ease; pointer-events: none;" style-hover="opacity:1"></span>
+          <span style="position: absolute; top: 14px; left: 14px; background: rgba(250,248,244,0.95); color: #16211F; font-size: 12px; font-weight: 600; padding: 7px 14px; border-radius: 999px; transition: transform 0.5s cubic-bezier(.22,1,.36,1);" style-hover="transform:translateY(-3px)">{{ t.label }}</span>
+          <span style="position: absolute; bottom: 14px; right: 14px; width: 38px; height: 38px; border-radius: 50%; background: rgba(250,248,244,0.95); display: flex; align-items: center; justify-content: center; color: #16211F; transition: background 0.4s ease, transform 0.5s cubic-bezier(.22,1,.36,1), color 0.4s ease;" style-hover="background:#0D6B66; transform:rotate(45deg) scale(1.08); color:#FAF8F4">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 64px;">
+      <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="display: inline-block; font-size: clamp(13px, 3.6vw, 15px); font-weight: 600; color: #FAF8F4; background: #0D6B66; padding: 16px 28px; border-radius: 999px; text-decoration: none; white-space: nowrap;" style-hover="background:#0A544F">Ver todos los servicios aquí</a>
+    </div>
+
+  </div><div id="esteticistas" data-screen-label="Esteticistas" style="background-color: #ECE4D4; background-image: url('assets/noise-texture.svg'), radial-gradient(ellipse 60% 45% at 12% 15%, rgba(180,146,84,0.10), transparent 70%), radial-gradient(ellipse 55% 40% at 88% 30%, rgba(13,107,102,0.05), transparent 70%), radial-gradient(ellipse 70% 55% at 30% 90%, rgba(180,146,84,0.08), transparent 70%), radial-gradient(ellipse 65% 50% at 95% 95%, rgba(200,178,140,0.10), transparent 70%); padding: 70px 32px 90px; border-width: 1px 0; border-style: solid; border-color: rgba(180,146,84,0.3); height: {{ esteticistasSectionHeight }}">
+    <div style="max-width: 1160px; margin: 0 auto;">
+
+      <div style="text-align: center; max-width: 620px; margin: 0 auto 60px; padding: 0 20px;">
+        <div style="font-family: Cormorant Garamond; font-size: clamp(30px, 8vw, 42px); color: #0D6B66; line-height: 1.1; font-weight: 800">El Equipo Green Spa</div>
+        
+      </div>
+
+      <!-- Foco rotativo automático -->
+      <div style="position: relative;">
+        <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+          <div style="position: relative; padding: 0 16px 16px 0;">
+            <div style="position: absolute; top: 16px; left: 16px; right: 0; bottom: 0; border: 2px solid #0D6B66; border-radius: 12px;"></div>
+            <div style="position: relative; overflow: hidden; border-radius: 12px;">
+              <img src="assets/team-photo.jpg" alt="El equipo de Green Spa" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: 50% 30%; display: block; animation: gs-kenburns 18s ease-in-out infinite alternate;">
+            </div>
+          </div>
+          <div style="min-height: {{ teamBioMinHeight }}; margin-top: 30px;">
+            <div style="{{ teamCTextStyle }}">
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #16211F; line-height: 1.15;">{{ teamCName }}</div>
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #0D6B66; margin: 6px 0 14px;">{{ teamCRole }}</div>
+              <p style="font-size: 15px; line-height: 1.7; color: #4A5551; margin: 0 auto; max-width: 560px;">{{ teamCBio }}</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+            <sc-for list="{{ teamCDots }}" as="d" hint-placeholder-count="3">
+              <div onClick="{{ d.onClick }}" style="{{ d.style }}"></div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIOS -->
+  <div id="testimonios" data-screen-label="Testimonios" style="max-width: 1240px; margin: 0 auto; padding: 70px 32px 90px; display: block">
+    <div style="display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start;">
+
+      <div style="flex: 1 1 340px; min-width: 280px;">
+        
+        <div ref="{{ setHeadingRef }}" style="font-family: Cormorant Garamond; font-size: 42px; color: #0D6B66; margin-bottom: 10px; font-weight: 800; line-height: 1.15;">{{ typedHeading }}<span style="{{ cursorStyle }}">|</span></div>
+        <div style="width: 64px; height: 3px; background: #C7DF3A; margin-bottom: 22px;"></div>
+        <p style="font-size: 16px; line-height: 1.8; color: #4A5551; max-width: 420px; margin: 0 0 32px;">La mejor recomendación viene de nuestras clientas. Estas son algunas de las experiencias que han vivido en Green Spa.</p>
+        <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="display: inline-block; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: #FAF8F4; background: #0D6B66; padding: 15px 34px; border-radius: 999px; text-decoration: none;" style-hover="background:#0A544F">Reserva aquí</a>
+      </div>
+
+      <div style="flex: 1 1 420px; min-width: 300px; position: relative;">
+        <div style="background: #fff; border: 1px solid rgba(13,107,102,0.12); border-radius: 20px; padding: 44px 40px; min-height: 150px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 24px 48px -28px rgba(13,38,35,0.18); position: static">
+          <span style="color: #C7DF3A; font-size: 16px; letter-spacing: 2px; display: block; margin-bottom: 18px;">★★★★★</span>
+          <p style="font-size: 17px; line-height: 1.75; color: #354039; margin: 0 0 22px; min-height: 90px;">"{{ activeTestimonial.text }}"</p>
+          <div style="font-size: 14px; font-weight: 600; color: #16211F;">{{ activeTestimonial.name }}</div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 26px; flex-wrap: nowrap">
+          
+        <div style="display: flex; gap: 10px;">
+            <button onClick="{{ prevTestimonial }}" style="width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(13,107,102,0.25); background: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer;" style-hover="background:#0D6B66;border-color:#0D6B66">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="2"><path d="M19 12H5"></path><path d="M11 18l-6-6 6-6"></path></svg>
+            </button>
+            <button onClick="{{ nextTestimonial }}" style="width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(13,107,102,0.25); background: #0D6B66; display: flex; align-items: center; justify-content: center; cursor: pointer;" style-hover="background:#0A544F">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+            </button>
+          </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GALERIA -->
+  <div id="galeria" data-screen-label="Galería" style="background-color: #ECE4D4; background-image: url('assets/noise-texture.svg'), radial-gradient(ellipse 60% 45% at 12% 15%, rgba(180,146,84,0.10), transparent 70%), radial-gradient(ellipse 55% 40% at 88% 30%, rgba(13,107,102,0.05), transparent 70%), radial-gradient(ellipse 70% 55% at 30% 90%, rgba(180,146,84,0.08), transparent 70%), radial-gradient(ellipse 65% 50% at 95% 95%, rgba(200,178,140,0.10), transparent 70%); border-top: 1px solid rgba(180,146,84,0.3); border-bottom: 1px solid rgba(180,146,84,0.3); padding: 70px 32px 90px; height: {{ galeriaSectionHeight }}">
+    <div style="max-width: 1160px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 620px; margin: 0 auto 48px;">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #0D6B66; margin-bottom: 10px;">Galería</div>
+        <div style="font-family: Cormorant Garamond; font-size: 42px; color: #0D6B66; font-weight: 800">Así se Vive Green Spa</div>
+      </div>
+
+      <!-- Galería orbital 3D -->
+      <div style="position: relative; text-align: center;">
+
+        <!-- depth: blurred botanical leaf shadows -->
+        <div style="position: absolute; left: -60px; top: 10%; width: 260px; height: 380px; background: #0D6B66; opacity: 0.06; border-radius: 50% 50% 45% 55% / 55% 60% 40% 45%; filter: blur(38px); transform: rotate(-18deg); pointer-events: none; z-index: 0;"></div>
+        <div style="position: absolute; right: -70px; bottom: 4%; width: 300px; height: 420px; background: #0D6B66; opacity: 0.05; border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%; filter: blur(44px); transform: rotate(24deg); pointer-events: none; z-index: 0;"></div>
+
+        <!-- depth: subtle organic wave -->
+        <svg viewBox="0 0 1160 200" preserveAspectRatio="none" style="position: absolute; left: 0; right: 0; bottom: -20px; width: 100%; height: 140px; opacity: 0.12; pointer-events: none; z-index: 0;">
+          <path d="M0,120 C 200,60 380,180 600,110 S 980,40 1160,100 L1160,200 L0,200 Z" fill="#0D6B6600"></path>
+        </svg>
+
+        <div onMouseEnter="{{ orbitEnter }}" onMouseLeave="{{ orbitLeave }}" style="position: relative; height: {{ orbitStageH }}; max-width: 1080px; margin: 8px auto 0; perspective: {{ orbitPerspective }}; perspective-origin: 50% 42%; z-index: 1;">
+          <sc-for list="{{ orbitItems }}" as="o" hint-placeholder-count="6">
+            <div ref="{{ o.setRef }}" onClick="{{ o.onClick }}" role="img" aria-label="{{ o.label }}" style="{{ o.wrapStyle }}">
+              <div style="position: relative; width: 100%; height: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 70px -28px rgba(13,38,35,0.55), 0 8px 20px -8px rgba(13,38,35,0.3);">
+                <div style="{{ o.imgStyle }}"></div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.06) 35%, rgba(255,255,255,0) 55%, rgba(13,38,35,0.12) 100%); pointer-events: none;"></div>
+                <div style="position: absolute; inset: 0; border-radius: 20px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); pointer-events: none;"></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="min-height: 40px; margin-top: 22px; position: relative; z-index: 1;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #0D6B66; line-height: 1.1;">{{ galCLabel }}</div>
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 14px; position: relative; z-index: 1;">
+          <sc-for list="{{ galFanDots }}" as="d" hint-placeholder-count="6">
+            <div onClick="{{ d.onClick }}" style="{{ d.style }}"></div>
+          </sc-for>
+        </div>
+        
+      </div>
+
+      
+    </div>
+  </div>
+
+  <!-- CTA RESERVA -->
+  <div data-screen-label="CTA Reserva" style="position: relative; padding: 60px 32px; text-align: center; overflow: hidden;">
+    <img src="assets/cta-maderoterapia.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.75);">
+    <div style="position: relative; z-index: 2; max-width: 560px; margin: 0 auto; backdrop-filter: blur(6px); padding: 40px 40px; box-shadow: 0px 30px 70px 0px #0000001B; overflow: visible; background-color: #FAF8F49C">
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 5vw, 40px); font-weight: 600; color: #0D6B66; line-height: 1.15;">Lista para tu momento</div>
+      <div style="font-family: 'Great Vibes', cursive; font-size: clamp(30px, 5.5vw, 44px); color: #0D6B66; margin-top: 2px;">de bienestar</div>
+      <div style="width: 56px; height: 3px; background: #C7DF3A; margin: 18px auto;"></div>
+      <p style="font-size: 15px; line-height: 1.7; color: #4A5551; margin: 0 auto 24px;">Reserva tu cita en minutos desde cualquier dispositivo. Sin esperas. <br>Solo elige el servicio, el día y la hora.</p>
+      <a href="https://greenspabyluz.setmore.com/book" target="_blank" rel="noopener" style="display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FAF8F4; background: #0D6B66; padding: 16px 36px; text-decoration: none; border-radius: 50px; animation: gs-cta-pulse 2.6s ease-out infinite; transition: transform 0.25s ease, background 0.25s ease;" style-hover="background:#0a544f; transform:scale(1.05)">Reservar mi cita</a>
+      <p style="font-size: 14.5px; color: #4A5551; margin: 18px 0 0;">También puedes llamarnos al <a href="tel:+17879892555" style="color: #0D6B66; font-weight: 600; text-decoration: none;">(787) 989-2555</a></p>
+    </div>
+  </div>
+
+  <!-- UBICACION -->
+  <div data-screen-label="Ubicación" style="background: #FAF8F4; padding: 70px 32px 90px;">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: stretch;">
+
+      
+
+      <div style="flex: 1 1 420px; min-width: 300px;">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 3.8vw, 2.8rem); margin: 0 0 18px; color: #16211F;">Estamos en Carolina</h2>
+        <p style="font-size: 16px; line-height: 1.8; color: #4A5551; max-width: 460px; margin: 0 0 40px;">Ubicadas en Villa Fontana, Carolina. Fácil acceso, ambiente tranquilo. Llámanos o reserva en línea.</p>
+
+        <div style="display: flex; align-items: flex-start; gap: 18px; margin-bottom: 30px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 6px 16px rgba(13,38,35,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.5 2.1L7.9 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.5c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"></path></svg>
+          </div>
+          <div>
+            <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #0D6B66; margin-bottom: 6px;">Teléfono</div>
+            <a href="tel:+17879892555" style="font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #16211F; text-decoration: none;" style-hover="color:#0D6B66">(787) 989-2555</a>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 18px; margin-bottom: 30px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 6px 16px rgba(13,38,35,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div>
+            <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #0D6B66; margin-bottom: 6px;">Dirección</div>
+            <a href="https://maps.app.goo.gl/GXAbjP3DmHeTmJBR6" target="_blank" rel="noopener" style="font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.5; color: #16211F; text-decoration: none;" style-hover="color:#0D6B66">Villa Fontana via Joséfina 4ss10<br>Carolina, Puerto Rico 00983</a>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 18px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 6px 16px rgba(13,38,35,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+          </div>
+          <div>
+            <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #0D6B66; margin-bottom: 6px;">Horario</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #16211F; margin-bottom: 4px;">Martes – Sábado</div>
+            
+          </div>
+        </div>
+      </div><div style="flex: {{ mapCardFlex }}; min-width: {{ mapCardMinWidth }}; width: {{ mapCardWidth }}; margin: {{ mapCardMargin }}; position: relative; background: #0D6B66; border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; padding: 50px 32px;">
+        <div style="position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(250,248,244,0.15);"></div>
+        <div style="position: absolute; bottom: -80px; left: -40px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(250,248,244,0.12);"></div>
+        <div style="position: relative; z-index: 1;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C7DF3A" stroke-width="1.6" style="margin-bottom: 16px;"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #FAF8F4; margin: 0 0 6px;">Villa Fontana</h3>
+          <p style="font-size: 13.5px; color: rgba(250,248,244,0.65); margin: 0 0 28px;">Carolina, Puerto Rico 00983</p>
+          <a href="https://maps.app.goo.gl/GXAbjP3DmHeTmJBR6" target="_blank" rel="noopener" style="display: inline-block; font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; color: #16211F; background: #C7DF3A; padding: 13px 26px; border-radius: 999px; text-decoration: none; text-transform: uppercase;">Ver en Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="contacto" data-screen-label="Footer" style="background: #0D6B66; padding: 70px 32px 30px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; padding-bottom: 40px;">
+
+        <div style="flex: 1 1 260px; text-align: center;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #C7DF3A; margin-bottom: 6px;">Green Spa by Luz</div>
+          <div style="font-family: 'Great Vibes', cursive; font-size: 30px; color: #FAF8F4; line-height: 1;">Hair Salon &amp; Boutique</div>
+        </div>
+
+        <div style="flex: 1 1 200px; text-align: center;">
+          <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C7DF3A; margin-bottom: 8px;">Teléfono</div>
+          <a href="tel:+17879892555" style="font-family: 'Great Vibes', cursive; font-size: 28px; color: #FAF8F4; text-decoration: none; line-height: 1;" style-hover="color:#C7DF3A">(787) 989-2555</a>
+        </div>
+
+        <div style="flex: 1 1 160px; display: flex; justify-content: center; gap: 16px;">
+          <a href="https://www.instagram.com/greenspabyluz/" target="_blank" rel="noopener" aria-label="Instagram" style="width: 46px; height: 46px; border-radius: 50%; background: #C7DF3A; border: 2px solid #C7DF3A; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 8px 18px rgba(199,223,58,0.3);" style-hover="background:#b8ce2e;border-color:#b8ce2e">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
+          </a>
+          <a href="https://www.facebook.com/greenspabyluz" target="_blank" rel="noopener" aria-label="Facebook" style="width: 46px; height: 46px; border-radius: 50%; background: #C7DF3A; border: 2px solid #C7DF3A; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 8px 18px rgba(199,223,58,0.3);" style-hover="background:#b8ce2e;border-color:#b8ce2e">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0D6B66" stroke-width="1.8"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div style="padding-top: 24px; border-top: 1px solid rgba(250,248,244,0.15); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;">
+        <p style="font-size: 12.5px; color: rgba(250,248,244,0.6); margin: 0;">© 2026 Green Spa by Luz. Todos los derechos reservados.</p>
+        <p style="font-size: 12.5px; color: rgba(250,248,244,0.6); margin: 0;">Diseñado por <a href="https://www.biancomediasolutions.com/" target="_blank" rel="noopener" style="color: #C7DF3A; font-weight: 600; text-decoration: none;" style-hover="text-decoration:underline">Bianco Media Solutions</a></p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/7879892555?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20tratamientos." target="_blank" rel="noopener" aria-label="WhatsApp: 787-989-2555" style="position: fixed; bottom: 24px; right: 24px; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.25); z-index: 60; text-decoration: none;">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M20.5 11.9c0 4.7-3.8 8.5-8.5 8.5-1.5 0-2.9-.4-4.1-1.1L3.5 20.5l1.2-4.2a8.4 8.4 0 0 1-1.2-4.4c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5z" fill="none" stroke="#fff" stroke-width="1.6"></path><path d="M8.5 8.7c.1-.5.5-.6.8-.6h.6c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.5 1.5.2.1.4.1.5-.1.2-.2.6-.7.8-1 .2-.2.3-.2.5-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.8-.2 1.5-.3.7-1.5 1.4-2.1 1.4-.5 0-1.2.1-3.5-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 .9-2.3z"></path></svg>
+  </a>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+
+class Component extends DCLogic {
+  _orbitRefs = [];
+  _treatmentRefs = [];
+
+  constructor(props) {
+    super(props);
+    this.state = { menuOpen: false, isMobile: false, typedChars: 0, cursorOn: true, testimonialIndex: 0, treatmentsRevealed: [], statIdx: 0 };
+    this.statsData = [
+      { label: 'Desde 2011', text: 'Más de una década cuidando tu bienestar' },
+      { label: '5.0 ★ en 25 reseñas', text: 'Calificación perfecta de nuestras clientas' },
+      { label: 'Equipo Certificado', text: 'Esteticistas profesionales y experimentadas' },
+      { label: 'Horario', text: 'Mar–Sáb, 9 AM – 6 PM · Cerrado dom. y lun.' }
+    ];
+    this.treatments = [
+      { src: 'assets/service-facial.jpg', label: 'Tratamientos faciales' },
+      { src: 'assets/service-maderoterapia.jpg', label: 'Maderoterapia' },
+      { src: 'assets/service-laser.jpg', label: 'Depilación láser' },
+      { src: 'assets/service-masaje.jpg', label: 'Masajes relajantes' }
+    ];
+    this.fullHeading = 'Más que un tratamiento, una experiencia';
+    this.testimonialsData = [
+      { text: 'Sol es definitivamente un Sol. Es atenta, divertida, paciente, honesta, servicial y profesional... El equipo de Green Spa es extraordinario y amable.', name: 'Lorena Green' },
+      { text: 'Muy buen servicio, el lugar muy tranquilo y relajante.', name: 'Adrián López' },
+      { text: 'Me estoy atendiendo con Sol en mi proceso de vencer el acné. Ha sido muy profesional, paciente y explicativa en cada paso. Me ha gustado mucho.', name: 'Eunice M. Ortiz Nieves' },
+      { text: 'Excelente atención desde que entras. El ambiente es muy relajante y los resultados en mi piel se notaron rápido.', name: 'Carmen Rivera' },
+      { text: 'Llevo meses viniendo y cada visita es mejor que la anterior. Sol siempre explica todo con detalle y te hace sentir en confianza.', name: 'Marisol Torres' },
+      { text: 'Un lugar acogedor y profesional. Recomiendo el facial hidratante, mi piel quedó increíble.', name: 'Yaritza Colón' },
+    ];
+  }
+
+  goToTestimonial = (i) => { this.setState({ testimonialIndex: i }); this.restartAutoplay(); };
+  prevTestimonial = () => { this.setState(s => ({ testimonialIndex: (s.testimonialIndex - 1 + this.testimonialsData.length) % this.testimonialsData.length })); this.restartAutoplay(); };
+  nextTestimonial = () => { this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonialsData.length })); this.restartAutoplay(); };
+
+  restartAutoplay = () => {
+    if (this._testimonialAutoplay) clearInterval(this._testimonialAutoplay);
+    this._testimonialAutoplay = setInterval(() => {
+      this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonialsData.length }));
+    }, 5000);
+  };
+
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width: 860px)');
+    this.setState({ isMobile: this.mq.matches });
+    this._resizeCheck = () => {
+      const matches = window.innerWidth <= 860;
+      if (matches !== this.state.isMobile) this.setState({ isMobile: matches, menuOpen: matches ? this.state.menuOpen : false });
+    };
+    window.addEventListener('resize', this._resizeCheck, { passive: true });
+    requestAnimationFrame(() => requestAnimationFrame(this._resizeCheck));
+    setTimeout(this._resizeCheck, 300);
+
+    this._onScroll = () => {
+      if (this.heroImgEl) {
+        const offset = window.scrollY * 0.35;
+        this.heroImgEl.style.transform = 'translateY(' + offset + 'px)';
+      }
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._teamCInterval = setInterval(() => this.goTeamC(((this.state.teamCIdx ?? 0) + 1) % this.teamMembers.length), 5000);
+    this._orbitAngle = 0;
+    this._floatTime = 0;
+    this._snapping = false;
+    this.orbitSpeed = (2 * Math.PI) / 46000; // full loop ~46s
+    this._orbitRAF = requestAnimationFrame(this.tickOrbit);
+    this._onChange = (e) => this.setState({ isMobile: e.matches, menuOpen: e.matches ? this.state.menuOpen : false });
+    if (this.mq.addEventListener) this.mq.addEventListener('change', this._onChange);
+    else this.mq.addListener(this._onChange);
+
+    this._treatmentObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const idx = this._treatmentRefs.indexOf(entry.target);
+        if (idx === -1) return;
+        setTimeout(() => {
+          this.setState((s) => {
+            const next = s.treatmentsRevealed.slice();
+            next[idx] = true;
+            return { treatmentsRevealed: next };
+          });
+        }, idx * 110);
+        this._treatmentObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.25 });
+    this._treatmentRefs.forEach((el) => { if (el) this._treatmentObserver.observe(el); });
+
+    this._statInterval = setInterval(() => {
+      this.setState((s) => ({ statIdx: (s.statIdx + 1) % this.statsData.length }));
+    }, 3200);
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._resizeCheck) window.removeEventListener('resize', this._resizeCheck);
+    if (this._teamCInterval) clearInterval(this._teamCInterval);
+    if (this._orbitRAF) cancelAnimationFrame(this._orbitRAF);
+    if (!this.mq) return;
+    if (this.mq.removeEventListener) this.mq.removeEventListener('change', this._onChange);
+    else this.mq.removeListener(this._onChange);
+    if (this._headingObserver) this._headingObserver.disconnect();
+    if (this._typeInterval) clearInterval(this._typeInterval);
+    if (this._treatmentObserver) this._treatmentObserver.disconnect();
+    if (this._cursorInterval) clearInterval(this._cursorInterval);
+    if (this._testimonialAutoplay) clearInterval(this._testimonialAutoplay);
+    if (this._statInterval) clearInterval(this._statInterval);
+  }
+
+  setHeadingRef = (el) => {
+    if (!el || this._headingSetup) return;
+    this._headingSetup = true;
+    const startTyping = () => {
+      if (this._typeInterval) return;
+      this._typeInterval = setInterval(() => {
+        this.setState(s => {
+          const next = s.typedChars + 1;
+          if (next >= this.fullHeading.length) {
+            clearInterval(this._typeInterval);
+            this._typeInterval = null;
+          }
+          return { typedChars: Math.min(next, this.fullHeading.length) };
+        });
+      }, 45);
+    };
+    if (typeof IntersectionObserver !== 'undefined') {
+      this._headingObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startTyping();
+            this._headingObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.4 });
+      this._headingObserver.observe(el);
+    } else {
+      startTyping();
+    }
+    this._cursorInterval = setInterval(() => this.setState(s => ({ cursorOn: !s.cursorOn })), 500);
+    this.restartAutoplay();
+  };
+
+  teamMembers = [
+    { name: 'Luz G. Rosado Díaz', role: 'Fundadora & Directora', bio: 'Con años de experiencia en belleza y bienestar, Luz creó Green Spa con una sola misión: que cada clienta salga sintiéndose la mejor versión de sí misma.' },
+    { name: 'Neyshaliz de Jesús Rosado', role: 'Esteticista', bio: 'Experta en depilación IPL y tratamientos corporales. Neyshaliz trabaja con precisión y dedicación para brindarte resultados duraderos.' },
+    { name: 'Sol Ariana Carmona Ortega', role: 'Esteticista', bio: 'Especialista en faciales y tratamientos de piel. Sol combina técnica y cuidado para garantizar que tu piel resplandezca.' }
+  ];
+
+  galleryItems = [
+    { src: 'assets/gal-dermaplaning.jpg', label: 'Dermaplaning' },
+    { src: 'assets/gal-facial-pareja.jpg', label: 'Facial en Pareja' },
+    { src: 'assets/gal-laser-rosacea.jpg', label: 'Láser para Rosácea' },
+    { src: 'assets/gal-microagujas.jpg', label: 'Microagujas' },
+    { src: 'assets/gal-radiofrecuencia.jpg', label: 'Radiofrecuencia' },
+    { src: 'assets/gal-picolaser.jpg', label: 'PicoLáser' }
+  ];
+
+  normalizeAngle = (a) => {
+    while (a > Math.PI) a -= 2 * Math.PI;
+    while (a < -Math.PI) a += 2 * Math.PI;
+    return a;
+  };
+
+  goGal = (i) => {
+    const n = this.galleryItems.length;
+    const baseAngle = ((2 * Math.PI) / n) * i;
+    this._snapTargetAngle = -baseAngle;
+    this._snapping = true;
+  };
+
+  orbitEnter = () => { this._paused = true; };
+  orbitLeave = () => { this._paused = false; };
+
+  tickOrbit = (t) => {
+    if (this._lastOrbitT == null) this._lastOrbitT = t;
+    const dt = Math.min(t - this._lastOrbitT, 48);
+    this._lastOrbitT = t;
+    this._floatTime += dt;
+
+    if (this._snapping) {
+      const diff = this.normalizeAngle(this._snapTargetAngle - this._orbitAngle);
+      this._orbitAngle += diff * 0.07;
+      if (Math.abs(diff) < 0.004) {
+        this._orbitAngle = this._snapTargetAngle;
+        this._snapping = false;
+      }
+    } else if (!this._paused) {
+      this._orbitAngle += dt * this.orbitSpeed;
+    }
+
+    const n = this.galleryItems.length;
+    const isMobile = this.state.isMobile;
+    const radius = isMobile ? 160 : 400;
+    let bestIdx = 0, bestCos = -Infinity;
+
+    for (let i = 0; i < n; i++) {
+      const el = this._orbitRefs[i];
+      const baseAngle = ((2 * Math.PI) / n) * i;
+      const angle = baseAngle + this._orbitAngle;
+      const cosA = Math.cos(angle);
+      const sinA = Math.sin(angle);
+      if (cosA > bestCos) { bestCos = cosA; bestIdx = i; }
+      if (!el) continue;
+      const x = radius * sinA;
+      const z = radius * cosA;
+      const depth = (cosA + 1) / 2;
+      const scale = 0.6 + depth * 0.55;
+      const opacity = 0.32 + depth * 0.68;
+      const floatY = Math.sin(this._floatTime * 0.0009 + i * 1.15) * (isMobile ? 8 : 14);
+      const rotateY = -angle * (180 / Math.PI);
+      const zIndex = Math.round(depth * 1000);
+      el.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + floatY.toFixed(1) + 'px,' + z.toFixed(1) + 'px) rotateY(' + rotateY.toFixed(1) + 'deg) scale(' + scale.toFixed(3) + ')';
+      el.style.opacity = opacity.toFixed(2);
+      el.style.zIndex = zIndex;
+      el.style.filter = depth < 0.55 ? 'blur(' + ((0.55 - depth) * 2.6).toFixed(1) + 'px)' : 'none';
+    }
+
+    if (bestIdx !== (this.state.galIdx ?? 0)) this.setState({ galIdx: bestIdx });
+    this._orbitRAF = requestAnimationFrame(this.tickOrbit);
+  };
+
+  goTeamC = (i, manual) => {
+    if (manual && this._teamCInterval) {
+      clearInterval(this._teamCInterval);
+      this._teamCInterval = setInterval(() => this.goTeamC(((this.state.teamCIdx ?? 0) + 1) % this.teamMembers.length), 5000);
+    }
+    this.setState({ teamCFade: true });
+    setTimeout(() => this.setState({ teamCIdx: i, teamCFade: false }), 350);
+  };
+
+  setRevealRef = (el) => {
+    if (!el || el._revealSetup) return;
+    el._revealSetup = true;
+    const show = () => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; };
+    if (typeof IntersectionObserver === 'undefined') { show(); return; }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { show(); obs.disconnect(); }
+      });
+    }, { threshold: 0.25 });
+    obs.observe(el);
+  };
+
+  renderVals() {
+    const isMobile = this.state.isMobile;
+    const menuOpen = this.state.menuOpen;
+    const typedChars = this.state.typedChars;
+    const typingDone = typedChars >= this.fullHeading.length;
+    const activeIdx = this.state.testimonialIndex;
+    return {
+      setHeadingRef: this.setHeadingRef,
+      setRevealRef: this.setRevealRef,
+      teamAGridCols: isMobile ? '1fr' : '1.05fr 1fr',
+      teamBImgH: isMobile ? '260px' : '460px',
+      teamBCardsStyle: isMobile
+        ? 'display:grid;grid-template-columns:1fr;gap:12px;padding:16px 0 0;'
+        : 'position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px;',
+      teamRowsA: this.teamMembers.map((m, i) => {
+        const active = i === (this.state.teamActiveA ?? 0);
+        return Object.assign({}, m, {
+          num: '0' + (i + 1),
+          onClick: () => this.setState({ teamActiveA: i }),
+          rowStyle: 'border-left:3px solid ' + (active ? '#C7DF3A' : 'rgba(13,107,102,0.15)') + '; padding:16px 0 16px 22px; cursor:pointer; transition:border-color .3s ease;',
+          numStyle: "font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:" + (active ? '#0D6B66' : 'rgba(13,107,102,0.4)') + '; transition:color .3s ease;',
+          bioStyle: 'max-height:' + (active ? '220px' : '0') + '; opacity:' + (active ? 1 : 0) + '; overflow:hidden; transition:max-height .5s ease, opacity .5s ease;'
+        });
+      }),
+      teamCName: this.teamMembers[this.state.teamCIdx ?? 0].name,
+      teamCRole: this.teamMembers[this.state.teamCIdx ?? 0].role,
+      teamCBio: this.teamMembers[this.state.teamCIdx ?? 0].bio,
+      teamCTextStyle: 'opacity:' + (this.state.teamCFade ? 0 : 1) + '; transform:translateY(' + (this.state.teamCFade ? '12px' : '0') + '); transition:opacity .35s ease, transform .35s ease;',
+      teamCDots: this.teamMembers.map((m, i) => ({
+        onClick: () => this.goTeamC(i, true),
+        style: 'width:' + (i === (this.state.teamCIdx ?? 0) ? '30px' : '9px') + '; height:9px; border-radius:999px; background:' + (i === (this.state.teamCIdx ?? 0) ? '#0D6B66' : 'rgba(13,107,102,0.25)') + '; cursor:pointer; transition:all .35s ease;'
+      })),
+      typedHeading: this.fullHeading.slice(0, typedChars),
+      cursorStyle: `opacity:${(!typingDone || this.state.cursorOn) ? 1 : 0};transition:opacity 0.1s;`,
+      activeTestimonial: this.testimonialsData[activeIdx],
+      testimonials: this.testimonialsData.map((t, i) => ({
+        goTo: () => this.goToTestimonial(i),
+        dotStyle: `width:${i === activeIdx ? '22px' : '8px'};height:8px;border-radius:999px;background:${i === activeIdx ? '#0D6B66' : 'rgba(13,107,102,0.25)'};cursor:pointer;transition:all 0.25s;`,
+      })),
+      prevTestimonial: this.prevTestimonial,
+      nextTestimonial: this.nextTestimonial,
+      desktopNavDisplay: isMobile ? 'none' : 'flex',
+      mobileToggleDisplay: isMobile ? 'flex' : 'none',
+      mobileMenuDisplay: (isMobile && menuOpen) ? 'flex' : 'none',
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      heroImgRef: (el) => { this.heroImgEl = el; },
+      footerTextAlign: isMobile ? 'center' : 'left',
+      footerLogoMargin: isMobile ? '0 auto 14px' : '0 0 14px',
+      footerRowJustify: isMobile ? 'center' : 'flex-start',
+      footerColAlign: isMobile ? 'center' : 'flex-start',
+      servicesGridCols: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
+      servicesSectionHeight: isMobile ? 'auto' : '559px',
+      esteticistasSectionHeight: isMobile ? 'auto' : '749px',
+      teamBioMinHeight: isMobile ? '150px' : '168px',
+      galeriaSectionHeight: isMobile ? 'auto' : '628px',
+      treatmentCards: this.treatments.map((t, i) => {
+        const revealed = !!this.state.treatmentsRevealed[i];
+        return {
+          label: t.label,
+          src: t.src,
+          setRef: (el) => { this._treatmentRefs[i] = el; },
+          wrapStyle: 'position:relative; display:block; border-radius:10px; overflow:hidden; aspect-ratio:3/4; text-decoration:none; opacity:' + (revealed ? 1 : 0) + '; transform:' + (revealed ? 'translateY(0) scale(1)' : 'translateY(34px) scale(0.96)') + '; transition:opacity 0.85s cubic-bezier(.22,1,.36,1), transform 0.85s cubic-bezier(.22,1,.36,1), box-shadow 0.5s ease; box-shadow:0 10px 26px -14px rgba(13,38,35,0.25);'
+        };
+      }),
+      statBarFlexDir: isMobile ? 'column' : 'row',
+      isMobile: isMobile,
+      notMobile: !isMobile,
+      introPadding: isMobile ? '56px 32px' : '72px 32px',
+      introGridCols: isMobile ? '1fr' : '1fr 320px',
+      introGap: isMobile ? '40px' : '64px',
+      introTextAlign: isMobile ? 'center' : 'left',
+      introImgPadding: '0 16px 16px 0',
+      introImgWidth: isMobile ? '100%' : 'auto',
+      introImgMaxWidth: isMobile ? '320px' : 'none',
+      introImgMargin: isMobile ? '0 auto' : '0',
+      statLabel: this.statsData[this.state.statIdx].label,
+      statText: this.statsData[this.state.statIdx].text,
+      statIdx: this.state.statIdx,
+      statDots: this.statsData.map((s, i) => ({
+        onClick: () => this.setState({ statIdx: i }),
+        style: 'width:' + (i === this.state.statIdx ? '20px' : '7px') + '; height:7px; border-radius:999px; background:' + (i === this.state.statIdx ? '#C7DF3A' : 'rgba(250,248,244,0.35)') + '; cursor:pointer; transition:all .35s ease;'
+      })),
+      galCLabel: this.galleryItems[this.state.galIdx ?? 0].label,
+      orbitEnter: this.orbitEnter,
+      orbitLeave: this.orbitLeave,
+      orbitStageH: isMobile ? '300px' : '460px',
+      orbitPerspective: isMobile ? '900px' : '1600px',
+      orbitItems: this.galleryItems.map((g, i) => {
+        const n = this.galleryItems.length;
+        const w = isMobile ? 120 : 190;
+        const h = isMobile ? 155 : 255;
+        const radius = isMobile ? 160 : 400;
+        const baseAngle = ((2 * Math.PI) / n) * i;
+        const angle = baseAngle + (this._orbitAngle || 0);
+        const cosA = Math.cos(angle);
+        const sinA = Math.sin(angle);
+        const x = radius * sinA;
+        const z = radius * cosA;
+        const depth = (cosA + 1) / 2;
+        const scale = 0.6 + depth * 0.55;
+        const opacity = 0.32 + depth * 0.68;
+        const rotateY = -angle * (180 / Math.PI);
+        const zIndex = Math.round(depth * 1000);
+        return {
+          label: g.label,
+          onClick: () => this.goGal(i),
+          setRef: (el) => { this._orbitRefs[i] = el; },
+          wrapStyle: 'position:absolute; left:50%; top:50%; width:' + w + 'px; height:' + h + 'px; margin-left:' + (-w / 2) + 'px; margin-top:' + (-h / 2) + 'px; cursor:pointer; will-change:transform; transform:translate3d(' + x.toFixed(1) + 'px,0px,' + z.toFixed(1) + 'px) rotateY(' + rotateY.toFixed(1) + 'deg) scale(' + scale.toFixed(3) + '); opacity:' + opacity.toFixed(2) + '; z-index:' + zIndex + ';',
+          imgStyle: 'width:100%; height:100%; background-image:url(\'' + g.src + '\'); background-size:cover; background-position:center;'
+        };
+      }),
+      galFanDots: this.galleryItems.map((g, i) => {
+        const active = i === (this.state.galIdx ?? 0);
+        return {
+          onClick: () => this.goGal(i, true),
+          style: 'width:' + (active ? '30px' : '9px') + '; height:9px; border-radius:999px; background:' + (active ? '#0D6B66' : 'rgba(13,107,102,0.25)') + '; cursor:pointer; transition:all .35s ease;'
+        };
+      }),
+      galleryMainDisplay: isMobile ? 'flex' : 'grid',
+      galleryMainHeight: isMobile ? 'auto' : '560px',
+      galleryFeatureStyle: isMobile ? 'width:100%; aspect-ratio:4/3;' : 'height:100%;',
+      galleryRowItemStyle: isMobile ? 'width:100%; aspect-ratio:1/1;' : 'height:100%; min-height:0;',
+      mapCardWidth: isMobile ? '100%' : 'auto',
+      mapCardMargin: isMobile ? '0 auto' : '0',
+      mapCardFlex: isMobile ? '1 1 100%' : '1 1 380px',
+      mapCardMinWidth: isMobile ? '0' : '300px',
+      statBarPadding: isMobile ? '32px 32px' : '28px 32px 56px',
+      statBarGap: isMobile ? '20px' : '40px',
+    };
+  }
+}
+
+</script>
+</body>
+</html>
